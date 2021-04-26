@@ -1,0 +1,23 @@
+
+spring:
+  cloud:
+      nacos:
+        discovery:
+          server-addr: 121.4.177.109:8849
+        config:
+          server-addr: 121.4.177.109:8849
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://121.4.177.109:3307/course_admin?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+
+

@@ -1,0 +1,27 @@
+server:
+  port: 88
+
+# 路径规则配置
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 121.4.177.109:8849
+    gateway:
+      routes:
+        #将路径为Path=/api/courseAdmin/**转发至后台服务
+        - id: course_admin_routes
+          uri: lb://course-admin
+          predicates:
+            - Path=/api/courseAdmin/**
+          filters:
+            - RewritePath=/api/courseAdmin/(?<segment>/?.*),/$\{segment}
+
+        #将路径为Path=/api/thirdparty/**转发至第三方服务模块(包括文件上传,短信服务等)
+        - id: course_third_party_route
+          uri: lb://course-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>/?.*),/$\{segment}
+

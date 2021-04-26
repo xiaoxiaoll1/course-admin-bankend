@@ -1,0 +1,7 @@
+oss:
+  config:
+    endpoint: oss-cn-shenzhen.aliyuncs.com
+    url: https://oos-all.oss-cn-shenzhen.aliyuncs.com/
+    accessKeyId: #
+    accessKeySecret: #
+    bucketName: #

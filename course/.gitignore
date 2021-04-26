@@ -5,9 +5,8 @@
 
 .idea/
 .target/
-**/target
 
-
+target
 
 # Log file
 *.log
